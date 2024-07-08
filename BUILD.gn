@@ -466,7 +466,8 @@ config("angle_common_config") {
   }
 
   if (is_win) {
-	# Needed for futex support
+    #  && !angle_is_winuwp && !build_with_chromium
+    # Needed for futex support
     libs += [ "synchronization.lib" ]
   }
 
