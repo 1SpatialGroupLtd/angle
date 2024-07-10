@@ -16,7 +16,7 @@ REM Generates some winui bindings
 call python scripts/winappsdk_setup.py
 
 REM finicky cmd string path escaping ..
-gn gen out/Release --args="angle_is_winappsdk=true is_debug=false is_component_build=false is_clang=false winappsdk_dir=\"C:/Development/angle/third_party/WindowsAppSDK\""
+gn gen out/Release --args="angle_is_winappsdk=true is_debug=false is_component_build=false is_clang=false winappsdk_dir=\"%cd%/third_party/WindowsAppSDK\""
 
 REM build it
 autoninja -C out/Release
