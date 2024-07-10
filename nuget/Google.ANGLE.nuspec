@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Google.ANGLE</id>
+        <version>2.1.20572</version>
+        <description>Native binaries of ANGLE for Windows</description>
+        <authors>1Spatial</authors>
+    </metadata>
+    <files>
+		<file src="Google.ANGLE.targets" target="build\native\Google.ANGLE.targets" />
+
+		<file src="..\include\EGL\**\*.h" target="Include\EGL" />
+		<file src="..\include\GLES\**\*.h" target="Include\GLES" />
+		<file src="..\include\GLES2\**\*.h" target="Include\GLES2" />
+		<file src="..\include\KHR\**\*.h" target="Include\KHR" />
+		<file src="..\include\angle_windowsstore.h" target="Include\angle_windowsstore.h" />
+		
+		<file src="..\out\Release\libGLESv2.dll" target="bin\native\x64\libGLESv2.dll" />
+		<file src="..\out\Release\libGLESv2.dll.lib" target="bin\native\x64\libGLESv2.dll.lib"/>
+		<file src="..\out\Release\libEGL.dll" target="bin\native\x64\libEGL.dll" />
+		<file src="..\out\Release\libEGL.dll.lib" target="bin\native\x64\libEGL.dll.lib"/>
+	</files>
+</package>

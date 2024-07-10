@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <angle-BinPath>$(MSBuildThisFileDirectory)..\..\bin\native\x64</angle-BinPath>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalLibraryDirectories>$(angle-BinPath);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libGLESv2.dll.lib;libEGL.dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemGroup Label="ANGLE">
+    <PackagingOutputs Include="$(angle-BinPath)\libEGL.dll">
+        <OutputGroup>AngleBinaries</OutputGroup>
+        <ProjectName>$(ProjectName)</ProjectName>
+        <TargetPath>%(Filename)%(Extension)</TargetPath>
+    </PackagingOutputs>
+    <PackagingOutputs Include="$(angle-BinPath)\libGLESv2.dll">
+        <OutputGroup>AngleBinaries</OutputGroup>
+        <ProjectName>$(ProjectName)</ProjectName>
+        <TargetPath>%(Filename)%(Extension)</TargetPath>
+    </PackagingOutputs>
+  </ItemGroup>
+
+</Project>
